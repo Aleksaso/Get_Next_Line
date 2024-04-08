@@ -1,0 +1,6 @@
+Hola
+Que Tal
+Como estas
+	5	Size
+Es una prueba de impresion de texto
+
