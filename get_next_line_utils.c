@@ -6,13 +6,13 @@
 /*   By: asilva-o <asilva-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:25:13 by asilva-o          #+#    #+#             */
-/*   Updated: 2024/04/08 09:47:36 by asilva-o         ###   ########.fr       */
+/*   Updated: 2024/04/08 19:18:05 by asilva-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-/* */
+/* concatena dos cadenas de caracteres y devuelve una nueva cadena */
 
 char	*ft_strjoin(char *s1, char *s2)
 {
@@ -39,7 +39,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (ptr);
 }
 
-/* */
+/* determina la longitud de una cadena de caracteres*/
 size_t	ft_strlen(char *s)
 {
 	size_t	i;
@@ -54,7 +54,8 @@ size_t	ft_strlen(char *s)
 	return (i);
 }
 
-/* */
+/* busca la primera aparicion de un caracter especifico en una cadena
+y devuelve un puntero a la ubicacion de ese caractere */
 char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;

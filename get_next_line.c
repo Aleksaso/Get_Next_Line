@@ -6,12 +6,13 @@
 /*   By: asilva-o <asilva-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:25:20 by asilva-o          #+#    #+#             */
-/*   Updated: 2024/04/08 09:55:40 by asilva-o         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:31:23 by asilva-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-/* */
+/* CONCATENA DOS CADENAS DE CARACTERES Toma dos argumentos que son punteros a
+caracteres char* y devuelve un puntero a caracter char* */
 char	*concatena_linea(char *linea1, char *linea2)
 {
 	char	*concatenar;
@@ -30,7 +31,7 @@ char	*concatena_linea(char *linea1, char *linea2)
 	return (concatenar);
 }
 
-/* */
+/* EXTRAE UNA LINEA DE TEXTO DE TOTAKE */
 char	*extraer_linea(char *totake_lineas)
 {
 	char	*linea;
@@ -58,7 +59,7 @@ char	*extraer_linea(char *totake_lineas)
 	return (linea);
 }
 
-/* */
+/* ACTUALIZA TOTAKE DESPUES DE EXTRAER UNA LINEA DE TEXTO*/
 char	*actualiza_totake(char *totake_lineas)
 {
 	char	*nextlinea;
@@ -87,7 +88,8 @@ char	*actualiza_totake(char *totake_lineas)
 	return (nextlinea);
 }
 
-/* */
+/* LEER LINEAS DE UN ARCHIVO DADO FD como argunto
+y devuelve un puntero a un char que representa la proxima linea*/
 char	*get_next_line(int fd)
 {
 	static char	*totake_lineas;
@@ -115,7 +117,7 @@ char	*get_next_line(int fd)
 	return (linea);
 }
 
-/*int	main(void)
+int	main(void)
 {
 	int		fd;
 	char	*linea;
@@ -129,11 +131,5 @@ char	*get_next_line(int fd)
 	linea = get_next_line(fd);
 	printf("%s", linea);
 	free(linea);
-	linea = get_next_line(fd);
-	printf("%s", linea);
-	free(linea);…
-	linea = get_next_line(fd);
-	printf("%s", linea);
-	free(linea);
 	return (0);
-}*/
+}
