@@ -6,13 +6,16 @@
 /*   By: asilva-o <asilva-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:25:20 by asilva-o          #+#    #+#             */
-/*   Updated: 2024/04/10 15:31:23 by asilva-o         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:01:45 by asilva-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-/* CONCATENA DOS CADENAS DE CARACTERES Toma dos argumentos que son punteros a
-caracteres char* y devuelve un puntero a caracter char* */
+/* Concatena_linea: concatena_linea es una función diseñada para combinar
+dos cadenas de caracteres en una sola cadena (linea1 y linea2) y las
+concatena. Si linea1 es nula, inicializa. Luego utiliza una función llamada
+ft_strjoin para concatenar linea1 y linea2. Finalmente, libera la memoria
+asignada a linea1 y retorna la cadena concatenada. */
 char	*concatena_linea(char *linea1, char *linea2)
 {
 	char	*concatenar;
@@ -31,7 +34,9 @@ char	*concatena_linea(char *linea1, char *linea2)
 	return (concatenar);
 }
 
-/* EXTRAE UNA LINEA DE TEXTO DE TOTAKE */
+/*Extraer_linea: Se utiliza para extraer una línea de texto desde el
+totake_lineas. Recorre el totake_lineas carácter por carácter hasta encontrar
+un ('\n') o el final de la cadena ('\0'). Luego asigna memoria.*/
 char	*extraer_linea(char *totake_lineas)
 {
 	char	*linea;
@@ -59,7 +64,11 @@ char	*extraer_linea(char *totake_lineas)
 	return (linea);
 }
 
-/* ACTUALIZA TOTAKE DESPUES DE EXTRAER UNA LINEA DE TEXTO*/
+/*Actualiza_lineas: Se utiliza para actualizar el totake_lineas después de haber
+extraído una línea de texto. Busca la primera ocurrencia de un ('\n') en
+totake_lineas. Si lo encuentra, asigna memoria para almacenar el resto del texto
+después del ('\n') , copia este texto en la nueva memoria y libera la memoria
+asignada a totake_lineas. */
 char	*actualiza_totake(char *totake_lineas)
 {
 	char	*nextlinea;
@@ -88,8 +97,13 @@ char	*actualiza_totake(char *totake_lineas)
 	return (nextlinea);
 }
 
-/* LEER LINEAS DE UN ARCHIVO DADO FD como argunto
-y devuelve un puntero a un char que representa la proxima linea*/
+/*El proceso de lectura del archivo utiliza una variable estática llamada
+totake_lineas para almacenar el texto pendiente. Se lee el archivo en bloques
+hasta encontrar un ('\n') o el final del archivo. Después de cada bloque,
+se busca un ('\n') en totake_lineas. Si se encuentra, se extrae la línea, se
+actualiza totake_lineas y se devuelve la línea. Si no, se sigue leyendo el
+archivo. Se retorna NULL si no se puede leer más o se llega al final del
+archivo.*/
 char	*get_next_line(int fd)
 {
 	static char	*totake_lineas;
@@ -117,7 +131,7 @@ char	*get_next_line(int fd)
 	return (linea);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int		fd;
 	char	*linea;
@@ -132,4 +146,4 @@ int	main(void)
 	printf("%s", linea);
 	free(linea);
 	return (0);
-}
+}*/
